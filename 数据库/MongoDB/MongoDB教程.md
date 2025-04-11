@@ -8,35 +8,21 @@
 
 学习难度：简单
 
-
-
 ## 基础篇
-
-
 
 ### 简介
 
 MongoDB 是一个开源的 **NoSQL 文档数据库**。它属于非关系型数据库中的文档存储类型，使用类似 JSON 的 BSON 格式存储数据。数据以 **文档(Document)** 形式存储，而文档组织在 **集合(Collection)** 中，而集合组织在 **数据库(Database)** 中。
 
-
-
 ### 基本概念
 
 在学习这个数据库之前，我们先了解一下他的基本概念：**数据库**，**集合**，**文档**。
 
-
-
 **数据库**：是用于存放**集合**（Collection）的**容器**。请把他简单的看作一个容器，没有其他的概念，就是一个容器。MongoDB中可以创建多个数据库。
-
-
 
 **集合**：用于存放**文档**（Document）的**容器**。没错，也请把他简单的看作一个容器。
 
-
-
 **文档**：MongoDB数据库存储数据的最小组织单元，是一个类JSON结构的文档，我们把他称为BSON。对JSON结构不了解的读者可参考链接：[https://www.runoob.com/json/json-tutorial.html](https://www.runoob.com/json/json-tutorial.html)
-
-
 
 ### 连接数据库
 
@@ -56,9 +42,7 @@ mongosh --version
 mongosh mongodb://[username:password@]hostname:port[/database]
 ```
 
-示例图片如下： ![](C:\Users\xurib\AppData\Roaming\marktext\images\2025-04-11-20-54-50-image.png)
-
-
+示例图片如下： ![](assets/2025-04-11-20-54-50-image.png)
 
 ### 数据库操作
 
@@ -73,14 +57,9 @@ use database             //切换到指定数据库，不存在则创建
 db.dropDatabase()        //删除当前所在的数据库
 ```
 
-
-
-
 综合示例如下：
 
-![](C:\Users\xurib\AppData\Roaming\marktext\images\2025-04-11-21-07-06-image.png)
-
-
+<img title="" src="assets/2025-04-11-21-07-06-image.png" alt="" data-align="inline">
 
 ### 集合操作
 
@@ -93,69 +72,4 @@ db.createCollection("name")    //创建集合
 db.collection.drop()           //删除集合
 show collections               //查看当前数据库所有集合
 show tables                    //查看当前数据库所有集合
-
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
