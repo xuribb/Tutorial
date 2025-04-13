@@ -2,7 +2,7 @@
 
 版本：1.0.0     
 
-更新时间：2025-04-11
+更新时间：2025-04-13
 
 作者：旭日彬彬
 
@@ -63,7 +63,7 @@ db.dropDatabase()        //删除当前所在的数据库
 
 ### 集合操作
 
-<mark>前提已连接到MongoDB数据库，这里不在演示</mark>
+*前提已连接到MongoDB数据库，这里不在演示*
 
 常用命令如下：
 
@@ -72,4 +72,77 @@ db.createCollection("name")    //创建集合
 db.collection.drop()           //删除集合
 show collections               //查看当前数据库所有集合
 show tables                    //查看当前数据库所有集合
+```
+
+---
+
+### 文档操作
+
+*前提已连接到MongoDB数据库，这里不在演示*
+
+常用命令如下：
+
+```powershell
+//插入单个文档
+db.collection.insertOne(document, [option])  
+//插入多个文档
+db.collection.insertMany(document, [option])
+//更新单个文档
+db.collection.updateOne(filter, update, [options])  
+//更新多个文档
+db.collection.updateMany(filter, update, [options]) 
+//替换为新文档
+db.collection.replaceOne(filter, newdoc, [options])  
+//查找并更新文档然后返回文档，可设置返回更新前或之后的文档
+db.collection.findOneAndUpdate(filter, update, [options]) 
+```
+
+综合示例如下：
+
+**注意：**
+
+- option 参数对象是可选的，用于对插入操作提供额外控制，参考值如下：
+  
+  | 参数             | 类型     | 说明                                           |
+  |:--------------:|:------:|:-------------------------------------------- |
+  | ordered        | bool   | 是否无序插入                                       |
+  | upsert         | bool   | 如果没有匹配的文档，是否插入一个新文档                          |
+  | arrayFilters   |        | 当更新嵌套数组时，指定应更新的数组元素的条件                       |
+  | collation      |        | 指定比较字符串时使用的排序规则                              |
+  | returnDocument | string | 固定值before/after。findOneAndUpdate中可用，返回旧或新的文档 |
+
+- 如果集合定义了验证规则，插入文档时会进行验证，如果不符合规则，插入会失败。
+
+#### 删除文档
+
+常用命令如下：
+
+```powershell
+//删除单个文档
+db.collection.deleteOne(filter, [options])
+//删除多个文档
+db.collection.deleteMany(filter, [options])
+//查找并删除单个文档
+db.collection.findOneAndDelete(filter, [options])
+```
+
+综合示例如下：
+
+**注意：**
+
+options 参数对象是可选的，用于对删除操作提供额外的控制，参考如下：
+
+| 参数           | 类型     | 说明                                  |
+|:------------:|:------:|:----------------------------------- |
+| writeConcern |        | 指定写操作的确认级别                          |
+| collation    |        | 指定比较字符串时使用的排序规则                     |
+| projection   | object | findOneAndDelete中可用，指定返回的字段         |
+| sort         |        | findOneAndDelete中可用，指定排序顺序以确定要删除的文档 |
+
+#### 查询文档
+
+常用命令如下：
+
+```powershell
+//
 ```
