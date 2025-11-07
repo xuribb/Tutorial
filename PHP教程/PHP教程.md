@@ -8,6 +8,20 @@
 
 作者：陆家伟
 
+## 循环结构
+
+### 1. for
+
+### 2. while
+
+### 3. do...while
+
+### 4. foreach
+
+
+
+
+
 ## 常量
 
 ### 1. 魔术常量
@@ -357,25 +371,27 @@ openssl_verify($testData, $signature, $publicKey, OPENSSL_ALGO_SHA256)
 
 
 
+### 数组相关
 
+- array_key_first()
 
+- array_key_last()
 
+- array_is_list()
 
+- array_contains()
 
+- array_partition()
 
+- array_unique()
 
+- array_filter()
 
+- array_map()
 
+- array_chunk
 
-
-
-
-
-
-
-
-
-
+- array_column()
 
 
 
